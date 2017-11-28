@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --hot --progress --colors --https --port 9090",
     "copy:libs": "cpx node_modules/vss-web-extension-sdk/lib/VSS.SDK.min.js libs",
-    "postinstall": "npm run copy:libs"
+    "postinstall": "npm run copy:libs",
+    "publish:dev": "npm run clean:vsix && npm run package:dev",
+    "clean:vsix": "rimraf *.vsix",
+    "package:dev": "node ./packageScripts/packageDev"
   },
   "repository": {
     "type": "git",
@@ -22,6 +25,7 @@
   "devDependencies": {
     "cpx": "^1.5.0",
     "rimraf": "^2.6.2",
+    "tfx-cli": "^0.4.11",
     "ts-loader": "^3.1.1",
     "typescript": "^2.6.2",
     "webpack": "^3.8.1",

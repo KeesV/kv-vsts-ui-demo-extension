@@ -1,0 +1,16 @@
+var exec = require("child_process").exec;
+
+// Load existing publisher
+var manifest = require("../vss-extension.json");
+var extensionId = manifest.id;
+console.log(`Extension id: '${extensionId}'`);
+
+// Package extension
+var command = `tfx extension create --overrides-file manifest-configs/dev.json --manifest-globs vss-extension.json --extension-id ${extensionId}-dev --no-prompt --rev-version`;
+exec(command, (error, stdout) => {
+    if (error) {
+        console.error(`Could not create package: '${error}'`);
+        return;
+    }
+    console.log("Package created");
+});

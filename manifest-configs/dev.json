@@ -3,5 +3,5 @@
     "baseUri": "https://localhost:9090",
     "name": "Dev: VSTS UI Demo extension",
     "publisher": "kverhaar",
-    "version": "0.0.1"
+    "version": "0.0.2"
 }
