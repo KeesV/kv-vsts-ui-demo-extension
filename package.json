@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --hot --progress --colors --https --port 9090",
+    "dev": "webpack-dev-server --config webpack.dev.js --hot --progress --colors --https --port 9090",
     "copy:libs": "cpx node_modules/vss-web-extension-sdk/lib/VSS.SDK.min.js libs",
     "postinstall": "npm run copy:libs",
     "publish:dev": "npm run clean:vsix && npm run package:dev",
     "clean:vsix": "rimraf *.vsix",
-    "package:dev": "node ./packageScripts/packageDev"
+    "package:dev": "node ./packageScripts/packageDev",
+    "clean": "npm run clean:vsix && rimraf dist",
+    "build:release": "npm run clean && mkdir dist && webpack --progress --colors --config webpack.release.js --output-path ./dist -p",
+    "package:release": "npm run build:release && node ./packageScripts/packageRelease"
   },
   "repository": {
     "type": "git",
@@ -23,13 +26,16 @@
   },
   "homepage": "https://github.com/KeesV/kv-vsts-ui-demo-extension#readme",
   "devDependencies": {
+    "copy-webpack-plugin": "^4.2.3",
     "cpx": "^1.5.0",
     "rimraf": "^2.6.2",
     "tfx-cli": "^0.4.11",
     "ts-loader": "^3.1.1",
     "typescript": "^2.6.2",
+    "uglifyjs-webpack-plugin": "^1.1.1",
     "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.5"
+    "webpack-dev-server": "^2.9.5",
+    "webpack-merge": "^4.1.1"
   },
   "dependencies": {
     "q": "^1.5.1",

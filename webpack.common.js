@@ -20,9 +20,5 @@ module.exports = {
   },
   resolve: {
     extensions: ['.json', '.js', '.css', '.ts']
-  },
-  devtool: 'source-map',
-  devServer: {
-    https: true
   }
 };
