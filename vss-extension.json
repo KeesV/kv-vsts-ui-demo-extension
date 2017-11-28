@@ -1,0 +1,67 @@
+{
+    "manifestVersion": 1,
+    "id": "kv-vsts-ui-demo-extension",
+    "version": "0.0.0",
+    "name": "VSTS UI Demo extension",
+    "scopes": [
+        "vso.work"
+    ],
+    "description": "This extension is a sample project to show a more realistic development and debugging workflow for VSTS extension development in VSCode.",
+    "publisher": "",
+    "public": false,
+    "icons": {
+        "default": "marketplace/logo.png"
+    },
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "tags": [
+        "Demo"
+    ],
+    "links": {
+        "support": {
+            "uri": "https://github.com/KeesV/kv-vsts-ui-demo-extension"
+        }
+    },
+    "branding": {
+        "color": "rgb(51,65,133)",
+        "theme": "dark"
+    },
+    "files": [
+        {
+            "path": "img",
+            "addressable": true
+        },
+        {
+            "path": "libs",
+            "addressable": true
+        },
+        {
+            "path": "src",
+            "addressable": true
+        },
+        {
+            "path": "marketplace",
+            "addressable": true
+        }
+    ],
+    "categories": [
+        "Plan and track"
+    ],
+    "contributions": [
+        {
+            "id": "vsts-sample-work-item-page",
+            "type": "ms.vss-work-web.work-item-form-page",
+            "description": "Sample custom work item page",
+            "targets":[
+                "ms.vss-work-web.work-item-form"
+            ],
+            "properties": {
+                "name": "Sample custom work item page",
+                "uri": "src/sample-page.html"
+            }
+        }
+    ]
+}
