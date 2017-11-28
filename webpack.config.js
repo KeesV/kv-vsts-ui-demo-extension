@@ -5,7 +5,7 @@ module.exports = {
     app: "./src/app.ts"
   },
   output: {
-    filename: "app.js",
+    filename: "./src/app.js",
     libraryTarget: "amd"
   },
   externals: [
