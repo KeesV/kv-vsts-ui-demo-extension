@@ -3,8 +3,6 @@
 import * as WitExtensionContracts  from "TFS/WorkItemTracking/ExtensionContracts";
 
 export function register() {
-    writeOutput();
-    
     VSS.register(VSS.getContribution().id, {
         onLoaded: (args: WitExtensionContracts.IWorkItemLoadedArgs) => {
             // Stuff to do when item is loaded here
