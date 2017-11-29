@@ -11,7 +11,12 @@
             "url": "https://kverhaar.visualstudio.com/Extensions/Team%20A/_backlogs/board/Features",
             "webRoot": "${workspaceRoot}",
             "sourceMaps": true,
-            "userDataDir": "${workspaceRoot}/out/chrome"
+            "userDataDir": "${workspaceRoot}/out/chrome",
+            "smartStep": true,
+            "skipFiles": [
+                "${workspaceFolder}/node_modules/**/*.js",
+                "${workspaceFolder}/libs/**/*.js"
+            ]
         }
     ]
 }
